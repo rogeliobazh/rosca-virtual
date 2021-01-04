@@ -1,62 +1,23 @@
 import Swal from 'sweetalert2'
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import VueCookies from 'vue-cookies'
+import {routes} from './routes/index'
+import App from './components/App.vue'
+import store from './store/index'
 
-(function($){
-	$(document).ready(function(){
-		let price = 0;
+Vue.use(VueRouter);
+Vue.use(VueCookies)
 
-		for (var i = 1, pieces = []; i < 29; i++) {
-	    	pieces[i] = i;
-	  	}
+let router = new VueRouter({
+	mode: 'hash',
+	routes,
+	store
+});
 
-	  	pieces.sort(function () {
-		     return Math.random() - 0.5;
-		});
-
-	  	let babies = pieces.splice(0,7);
-
-	  	let prices = [
-	  		'Tamales',
-	  		'Abrazos',
-	  		'Chistes',
-	  		'Perritos',
-	  		'Calzones',
-	  		'Calcetines',
-	  		'Tangas'
-	  	];
-
-		$("body").on("click", "*[class^='rp-']", function(){
-			let className = $(this).attr('class');
-			let number = className.split("-")[1];
-			var inBabies = checkValue(number, babies);
-			if(inBabies){
-				Swal.fire({
-				  imageUrl: 'assets/img/grogu.png',
-					  imageHeight: 300,
-				  title: 'Yeeei!',
-				  text: 'Te toco el grogu de ' + prices[price],
-				});
-				price++;
-			} else {
-				Swal.fire({
-				  icon: 'info',
-				  title: 'Buuu',
-				  text: 'No hay ninjo :(',
-				});
-			}
-			$(this).hide()
-		});
-
-		function checkValue(value,arr){
-		  let status = false;
-
-		  for(var i=0; i<arr.length; i++){
-		    let name = arr[i];
-		    if(name == value){
-		      status = true;
-		      break;
-		    }
-		  }
-		  return status;
-		}
-	});
-})(jQuery);
+var vm = new Vue({
+	el: "#app",
+	router,
+	store,
+	render: h => h(App),
+});

@@ -1,5 +1,6 @@
 body
-	font-family: 'Darker Grotesque', sans-serif
+	font-family: 'Montserrat', sans-serif;
+	@apply bg-gray-50
 
 .rosca-container
 	margin: 0 auto
@@ -7,6 +8,30 @@ body
 
 div[class^=rp-]
 	text-align: center
-	background-color: #A0522D
 	height: 60px
-	cursor: url("https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/64x64/knife.png"), auto
+	cursor: url("../img/knife.png"), auto
+	display: flex
+	justify-content: center
+	align-items: center
+
+.step-container
+	@apply bg-white shadow-md max-w-5xl mx-auto px-10 py-5
+
+p, li, div, label
+	@apply text-base
+
+input[type=radio]:checked + label
+	@apply border-yellow-500
+
+.fade-enter-active, .fade-leave-active
+  transition: opacity .5s
+
+.fade-enter, .fade-leave-to
+  opacity: 0
+
+label.size-label
+	width: 100px
+	height: 100px
+	display: block
+	margin: 0 1rem
+	cursor: pointer

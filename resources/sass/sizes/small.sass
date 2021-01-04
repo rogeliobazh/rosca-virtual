@@ -1,9 +1,6 @@
-body
-	@apply bg-blue-700
-
 .rosca-container
 	&.chica
-		max-width: 800px
+		max-width: 600px
 		.grid-container
 			grid-template-columns: 1fr 1fr 1fr 1fr
 			grid-template-rows: 1fr 1fr 1fr
@@ -12,23 +9,33 @@ body
 			grid-template-areas: "rp-1 rp-2 rp-3 rp-4" "rp-10 . . rp-5" "rp-9 rp-8 rp-7 rp-6"
 			div[class^=rp-]
 				height: 100px
-			.rp-1
+			.rp-0
 				grid-area: rp-1
-			.rp-2
+				background-image: url('../img/small/corner_001.png')
+			.rp-1
 				grid-area: rp-2
-			.rp-3
+				background-image: url('../img/small/horizontal_001.png')
+			.rp-2
 				grid-area: rp-3
-			.rp-4
+				background-image: url('../img/small/horizontal_002.png')
+			.rp-3
 				grid-area: rp-4
-			.rp-5
+				background-image: url('../img/small/corner_002.png')
+			.rp-4
 				grid-area: rp-5
-			.rp-6
+				background-image: url('../img/small/vertical_001.png')
+			.rp-5
 				grid-area: rp-6
-			.rp-7
+				background-image: url('../img/small/corner_004.png')
+			.rp-6
 				grid-area: rp-7
-			.rp-8
+				background-image: url('../img/small/horizontal_001.png')
+			.rp-7
 				grid-area: rp-8
-			.rp-9
+				background-image: url('../img/small/horizontal_003.png')
+			.rp-8
 				grid-area: rp-9
-			.rp-10
+				background-image: url('../img/small/corner_003.png')
+			.rp-9
 			 	grid-area: rp-10
+			 	background-image: url('../img/small/vertical_002.png')
