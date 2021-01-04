@@ -15,10 +15,11 @@ div[class^=rp-]
 	align-items: center
 
 .step-container
-	@apply bg-white shadow-md max-w-5xl mx-auto px-10 py-5
+	@apply bg-white shadow-md max-w-7xl mx-auto
 
-p, li, div, label
-	@apply text-base
+p, li, div, label, *
+	color: #504141
+	@apply antialiased
 
 input[type=radio]:checked + label
 	@apply border-yellow-500
@@ -35,3 +36,12 @@ label.size-label
 	display: block
 	margin: 0 1rem
 	cursor: pointer
+
+.swal2-styled.swal2-confirm
+	background-color: rgba(245, 158, 11, var(--tw-bg-opacity)) !important
+
+.swal2-loader
+	display: none !important
+
+.swal2-timer-progress-bar
+	background-color: rgba(245, 158, 11, var(--tw-bg-opacity)) !important

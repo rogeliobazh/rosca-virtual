@@ -1,27 +1,43 @@
 <template>
 	<div class="step-container">
-		<div v-if="size != ''" class="max-w-2xl mx-auto">
-			<p class="text-center text-base leading-6 mb-2">
-				Aquí nos gusta ser muy complacientes y dejamos que casi todo se pueda personalizar para satisfacer a nuestros clientes. Y los bebés en la rosca es un claro ejemplo de ello. <p>
-			<p class="text-center text-base leading-6 mb-2">
-				Puedes escoger entre usar el bebé tradicional o una figurita del bebé mas famoso del momento:
-			</p>
+		<div class="max-w-2xl mx-auto">
+			<p>¿Para cuantas personas preparamos tu rosca?</p>
 			<div class="mx-auto flex flex-row justify-center my-4">
 				<div>
-					<input type="radio" id="bebe" name="babyType" value="bebe" v-model="babyType">
-					<label for="bebe" class="size-label border border-gray-200 text-gray-400 size-sm">Bebé</label></div>
+					<input type="radio" id="sm" value="10" v-model="size">
+					<label for="sm" class="size-label border border-gray-200 text-gray-400 size-sm">Chica</label></div>
 				<div>
-					<input type="radio" id="grogu" name="babyType" value="grogu" v-model="babyType">
-					<label for="grogu" class="size-label border border-gray-200 text-gray-400 size-md">Grogu</label>
+					<input type="radio" id="md" value="20" v-model="size">
+					<label for="md" class="size-label border border-gray-200 text-gray-400 size-md">Mediana</label>
+				</div>
+				<div>
+					<input type="radio" id="lg" value="30" v-model="size">
+					<label for="lg" class="size-label border border-gray-200 text-gray-400 size-lg">Grande</label>
+				</div>
+				<div>
+					<input type="radio" id="xl" value="50" v-model="size">
+					<label for="xl" class="size-label border border-gray-200 text-gray-400 size-xl">Extra Grande</label>
 				</div>
 			</div>
+			<transition name="fade">
+				<div v-if="size !=''">
+					<p>¿Qué modelo de bebé quieres que usemos?</p>
+					<div class="mx-auto flex flex-row justify-center my-4">
+						<div>
+							<input type="radio" id="bebe" name="babyType" value="bebe" v-model="babyType">
+							<label for="bebe" class="size-label border border-gray-200 text-gray-400 size-sm">Bebé</label>
+						</div>
+						<div>
+							<input type="radio" id="grogu" name="babyType" value="grogu" v-model="babyType">
+							<label for="grogu" class="size-label border border-gray-200 text-gray-400 size-md">Grogu</label>
+						</div>
+					</div>
+				</div>
+			</transition>
 			<transition name="fade">
 				<div v-if="babyType != ''" class="custom-number-input max-w-2xl mx-auto my-4">
 					<p class="text-center text-base leading-6 mb-2">
 						Ahora, cuantos bebés quieres que escondamos en tu rosca?
-					</p>
-					<p class="text-center text-base leading-6 mb-2">
-						Puedes poner los que quieras (mientras quepan en la rosca, claro) y no te preocupes, no le diremos a nadie ;)
 					</p>
 					<p class="text-center text-base leading-6 mb-2">
 						Tienes <span class="text-yellow-500 text-base leading-6 font-bold">{{this.size - this.babies}}</span> bebés disponibles
@@ -30,46 +46,43 @@
 					    <button data-action="decrement" class="bg-yellow-500 text-white hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none" v-on:click="decrement">
 					      <span class="m-auto text-2xl font-thin">−</span>
 					    </button>
-					    <input type="number" class="border border-grey text-center w-full bg-white font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700" v-model="babies" disabled="disabled"></input>
+					    <input type="number" class="border border-grey text-center w-full bg-white text-sm md:text-basecursor-default flex items-center text-gray-700" v-model="babies" disabled="disabled"></input>
 					  	<button data-action="increment" class="bg-yellow-500 text-white hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer" v-on:click="increment">
 					    <span class="m-auto text-2xl font-thin">+</span>
 					  </button>
 					</div>
 				</div>
 			</transition>
-		</div>
-		<transition name="fade">
-			<div v-show="babies > 0">
-				<p class="text-center text-base leading-6 mb-2">
+			<transition name="fade">
+				<div v-show="babies > 0">
+					<input type="checkbox" v-model="edit" id="edit" >
+					<label for="edit" class="text-sm">Quieres personalizar tus bebés?</label>
+					<transition name="fade">
+						<div v-if="edit" id="babies_container">
+							<div v-for="(babie, index) in cBabies">
+								<div class="mb-3 flex flex-row justify-between border-b border-gray-400 pt-2 pb-4">
+									<input type="text" v-model="babie.text" class="border border-gray-600 px-2 py-1 text-left bg-white text-sm text-gray-700 w-full max-w-md rounded mr-4" :name="'babie['+index+'][text]'">
+									<div>
+										<input type="radio" :name="'babie['+index+'][type]'" v-model="babie.type" value="castigo" :id="'castigo-'+index">
+										<label :for="'castigo-'+index" class="text-sm text-gray-700">Castigo</label>
+										<input type="radio" :name="'babie['+index+'][type]'" v-model="babie.type" value="premio" :id="'premio-'+index">
+										<label :for="'premio-'+index" class="text-sm text-gray-700">Premio</label>
+									</div>
 
-					Ahora, para hacerlo mas divertido, te ofrecemos la opción de personalizar cada uno de tus bebés.
-				</p>
-				<p class="text-center text-base leading-6 mb-2">
-					Puedes cambiar entre dos tipos de bebé, Premio o Castigo y cambiarle el texto a cada uno!
-				</p>
-				<p class="text-center text-sm leading-6 mb-2">
-					Intenta intercalarlos, ya que el orden de los bebés es el orden en él que iran apareciendo.
-				<p>
-				<input type="checkbox" v-model="edit" id="edit" >
-				<label for="edit" class="text-sm">Quieres personalizar tus bebés?</label>
-				<transition name="fade">
-					<div v-if="edit" id="babies_container">
-						<div v-for="(babie, index) in cBabies">
-							<div class="mb-3">
-								<input type="text" v-model="babie.text" class="border border-grey text-center bg-white font-semibold text-md hover:text-black focus:text-black md:text-basecursor-default text-gray-700" :name="'babie['+index+'][text]'">
-								<input type="radio" :name="'babie['+index+'][type]'" v-model="babie.type" value="castigo" :id="'castigo-'+index"> <label :for="'castigo-'+index">Castigo</label>
-								<input type="radio" :name="'babie['+index+'][type]'" v-model="babie.type" value="premio" :id="'premio-'+index"> <label :for="'premio-'+index">Premio</label>
+								</div>
+
 							</div>
-
 						</div>
-					</div>
-				</transition>
-				<div class="flex flex-row justify-between">
-					<button class="py-3 px-4 bg-yellow-500 text-white rounded-lg" @click="navigatePrev" type="button"> Regresa</button>
-		        	<button class="py-3 px-4 bg-yellow-500 text-white rounded-lg" @click="navigateNext" type="button">Estamos Listos!</button>
+					</transition>
 				</div>
-			</div>
-		</transition>
+			</transition>
+		</div>
+		<div class="flex flex-row justify-between">
+			<button class="py-3 px-4 bg-yellow-500 text-white rounded-lg" @click="navigatePrev" type="button"> Regresa</button>
+			<transition name="fade">
+        		<button v-show="babies > 0" class="py-3 px-4 bg-yellow-500 text-white rounded-lg" @click="navigateNext" type="button">Estamos Listos!</button>
+        	</transition>
+		</div>
 	</div>
 </template>
 <script>
@@ -100,6 +113,9 @@
 				get() {
 					return this.$store.state.size
 				},
+				set(value){
+					this.$store.commit('setSize', value)
+				}
 			},
 			edit: {
 				get() {
@@ -119,9 +135,7 @@
 			}
 		},
 		mounted() {
-			if(! this.size) {
-				this.$router.push('/')
-			}
+
 			if(this.$cookies.get('babies')) {
 				let cookie = this.$cookies.get('babies')
 				this.cBabies = JSON.parse(cookie);

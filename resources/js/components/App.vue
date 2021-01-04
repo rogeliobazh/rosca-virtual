@@ -1,8 +1,6 @@
 <template>
     <div class="main-container">
-        <div class="text-center">
-            <router-view></router-view>
-        </div>
+        <router-view></router-view>
     </div>
 </template>
 <script>

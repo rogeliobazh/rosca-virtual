@@ -1,57 +1,101 @@
 <template>
-	<div>
-		<div class="step-container text-center">
-			<div class="max-w-2xl mx-auto">
-				<h1 class="text-xl mb-4">Bienvenido!</h1>
-				<p class="text-center text-base leading-6 mb-2">
-					Gracias por visitar nuestra panadería virtual!
-				</p>
-				<p class="text-center text-base leading-6 mb-2">
-					Por temporada alta, solo te venimos manejando lo que son las roscas de reyes y la verdad es que nos quedan bien buenas. Cómo ves, te interesa?
-				</p>
-				<p class="text-center text-base leading-6 mb-2">
-					Excelente! Para empezar, cuentanos... de que tamaño quieres tu rosca?
-				</p>
-				<div class="mx-auto flex flex-row justify-center my-4">
-					<div>
-						<input type="radio" id="sm" value="10" v-model="size">
-						<label for="sm" class="size-label border border-gray-200 text-gray-400 size-sm">Chica</label></div>
-					<div>
-						<input type="radio" id="md" value="20" v-model="size">
-						<label for="md" class="size-label border border-gray-200 text-gray-400 size-md">Mediana</label>
-					</div>
-					<div>
-						<input type="radio" id="lg" value="30" v-model="size">
-						<label for="lg" class="size-label border border-gray-200 text-gray-400 size-lg">Grande</label>
-					</div>
-					<div>
-						<input type="radio" id="xl" value="50" v-model="size">
-						<label for="xl" class="size-label border border-gray-200 text-gray-400 size-xl">Extra Grande</label>
-					</div>
+	<div class="step-container">
+		<div class="header" style="background-color: #F5F3DE;">
+			<div class="flex flex-col md:flex-row justify-between items-center py-14 px-9">
+				<div class="max-w-xl">
+					<h1 class="text-3xl mb-4 font-bold">Bienvenidos!</h1>
+					<p class="text-2xl font-normal leading-relaxed mb-8">Con <b>Rosca Virtual</b> comparte con tu familia y amigos la tradición de la Rosca de Reyes  ¡Sin salir de casa!</p>
+					<button class="py-3 px-4 bg-orange-custom text-white rounded-lg">¡Próximamente!</button>
 				</div>
-
+				<div>
+					<img src="/assets/img/header.png" alt="Rosca Virtual" style="max-width: 250px;">
+				</div>
 			</div>
-			<transition name="fade">
-				<div v-show="size != ''" class="flex flex-row justify-end">
-					<button class="py-3 px-4 bg-yellow-500 text-white rounded-lg" @click="navigateNext" type="button">Siguiente</button>
-				</div>
-			</transition>
 		</div>
-
+		<div class="px-9 py-9">
+			<div class="mb-8">
+				<h3 class="text-2xl font-bold leading-relaxed text-orange-custom mb-4">¿Cómo empezar?</h3>
+				<div class="flex flex-col md:flex-row justify-between">
+					<div class="max-w-xl">
+						<p class="text-base font-normal leading-relaxed">
+							Para utilizar Rosca Virtual es indispensable poder compartir tu pantalla con tus amigos.  <br> Puedes usar una de estas herramientas!
+						</p>
+					</div>
+					<div class="flex flex-row justify-center md:justify-between items-center my-4 md:my-0">
+						<img src="/assets/img/zoom.png" alt="Zoom" class="mx-4" style="max-height: 60px">
+						<img src="/assets/img/meet.png" alt="Google meets" class="mx-4" style="max-height: 60px">
+					</div>
+				</div>
+			</div>
+			<div class="mb-8">
+				<h3 class="text-2xl font-bold leading-relaxed text-orange-custom mb-4">Paso 1: Selecciona el tamaño de tu rosca</h3>
+				<div class="flex flex-row">
+					<div class="max-w-xl">
+						<p class="text-base font-normal leading-relaxed">
+							Tenemos variedad para los paladares más distinguidos.
+						</p>
+					</div>
+					<div></div>
+				</div>
+			</div>
+			<div class="mb-8">
+				<h3 class="text-2xl font-bold leading-relaxed text-orange-custom mb-4">Paso 2: Selecciona a tu bebé</h3>
+				<div class="flex flex-row">
+					<div class="max-w-xl">
+						<p class="text-base font-normal leading-relaxed mb-4">
+							Si ya estamos innovando con la Rosca Virtual ¿Por què no seleccionar otro bebé?  
+						</p>
+						<p class="text-base font-normal leading-relaxed">
+							Puedes escoger entre usar el bebé tradicional o una figurita del bebé mas famoso del momento.
+						</p>
+					</div>
+					<div></div>
+				</div>
+			</div>
+			<div class="mb-8">
+				<h3 class="text-2xl font-bold leading-relaxed text-orange-custom mb-4">Paso 3: ¿Cuántos bebés habrá en tu rosca?</h3>
+				<div class="flex flex-row">
+					<div class="max-w-xl">
+						<p class="text-base font-normal leading-relaxed mb-4">
+							Selecciona cuantos bebés quieres que haya escondidos en tu rosca.  
+						</p>
+						<p class="text-base font-normal leading-relaxed">
+							¿Quieres una rosca llena de bebés?  Tus deseos son ordenes!
+						</p>
+					</div>
+					<div></div>
+				</div>
+			</div>
+			<div class="mb-8">
+				<h3 class="text-2xl font-bold leading-relaxed text-orange-custom mb-4">Paso 4: Personaliza los castigos o cambialos a premios!</h3>
+				<div class="flex flex-row">
+					<div class="max-w-xl">
+						<p class="text-base font-normal leading-relaxed mb-4">
+							Por default los castigos de los bebés son los clasicos tamales, pero para hacerlo más divertido. <br> ¡Puedes personalizarlos!  
+						</p>
+						<p class="text-base font-normal leading-relaxed">
+							Crea castigos únicos o ¿por qué no? que los bebés sean premios. <br> ¡Tú decides!
+						</p>
+					</div>
+					<div></div>
+				</div>
+			</div>
+			<div class="mb-8">
+				<h3 class="text-2xl font-bold leading-relaxed text-orange-custom mb-4">Paso 5: Tu rosca está lista ¡COMPARTE TU PANTALLA!</h3>
+				<div class="flex flex-row">
+					<div class="max-w-xl">
+						<p class="text-base font-normal leading-relaxed">
+							Ahora si a disfrutar la Rosca Virtual con tus seres queridos! <b>No olvides compartir tu pantalla</b> para qué todos disfruten el momento.
+						</p>
+					</div>
+					<div></div>
+				</div>
+			</div>
+		</div>
 	</div>
 </template>
 <script>
 	export default {
-		computed: {
-			size: {
-				get() {
-					return this.$store.state.size
-				},
-				set(value){
-					this.$store.commit('setSize', value)
-				}
-			},
-		},
 		methods: {
 			navigateNext: function(){
 				this.$router.push('/babies/');
