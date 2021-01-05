@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-7HHKHMRRF1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-7HHKHMRRF1');
+	</script>
 	<title>Rosca Virtual</title>
 	<link rel="icon" type="image/png" href="assets/img/Favicon.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
