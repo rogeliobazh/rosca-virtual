@@ -21950,7 +21950,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "step-container" }, [
-    _c("div", { staticClass: "max-w-2xl mx-auto text-center" }, [
+    _c("div", { staticClass: "max-w-2xl mx-auto text-center py-4" }, [
       _c(
         "label",
         {
