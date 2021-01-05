@@ -14,7 +14,7 @@ document.getElementById('creditos').addEventListener("click", function(){
 	  	html: '<div>' +
 			'<div class="flex flex-row justify-start items-center content-center mb-2">' +
 				'<div class="mr-4">' +
-					'<img src="/assets/img/ale.jpg" alt="Alejandra" style="max-width: 70px; border-radius: 70px">' +
+					'<img src="/assets/img/ale.jpg" alt="Alejandra" style="max-width: 50px; border-radius: 50px">' +
 				'</div>' +
 				'<div>' +
 					'<a href="https://twitter.com/Alejandrama_" target="_blank" style="font-style: italic;">@Alejandrama_</a>' +
@@ -23,7 +23,7 @@ document.getElementById('creditos').addEventListener("click", function(){
 			'</div>' +
 			'<div class="flex flex-row justify-start items-center content-center mb-2">' +
 				'<div class="mr-4">' +
-					'<img src="/assets/img/bodo.jpg" alt="Abraham" style="max-width: 70px; border-radius: 70px">' +
+					'<img src="/assets/img/bodo.jpg" alt="Abraham" style="max-width: 50px; border-radius: 50px">' +
 				'</div>' +
 				'<div>' +
 					'<a href="https://twitter.com/bazh_" target="_blank" style="font-style: italic;">@bazh_</a>' +
@@ -32,7 +32,7 @@ document.getElementById('creditos').addEventListener("click", function(){
 			'</div>' +
 			'<div class="flex flex-row justify-start items-center content-center mb-2">' +
 				'<div class="mr-4">' +
-					'<img src="/assets/img/naila.jpg" alt="Naila" style="max-width: 70px; border-radius: 70px">' +
+					'<img src="/assets/img/naila.jpg" alt="Naila" style="max-width: 50px; border-radius: 50px">' +
 				'</div>' +
 				'<div>' +
 					'<a href="https://twitter.com/nailarogu" target="_blank" style="font-style: italic;">@nailarogu</a>' +
@@ -41,7 +41,7 @@ document.getElementById('creditos').addEventListener("click", function(){
 			'</div>' +
 			'<div class="flex flex-row justify-start items-center content-center mb-2">' +
 				'<div class="mr-4">' +
-					'<img src="/assets/img/pepe.jpg" alt="Pepe" style="max-width: 70px; border-radius: 70px">' +
+					'<img src="/assets/img/pepe.jpg" alt="Pepe" style="max-width: 50px; border-radius: 50px">' +
 				'</div>' +
 				'<div>' +
 					'<a href="https://twitter.com/RegresoSrBazan" target="_blank" style="font-style: italic;">@RegresoSrBazan</a>' +
@@ -50,7 +50,7 @@ document.getElementById('creditos').addEventListener("click", function(){
 			'</div>' +
 			'<div class="flex flex-row justify-start items-center content-center mb-2">' +
 				'<div class="mr-4">' +
-					'<img src="/assets/img/jc.jpg" alt="JC" style="max-width: 70px; border-radius: 70px">' +
+					'<img src="/assets/img/jc.jpg" alt="JC" style="max-width: 50px; border-radius: 50px">' +
 				'</div>' +
 				'<div>' +
 					'<a href="https://twitter.com/juancr_"  target="_blank" style="font-style: italic;">@juancr_</a>' +
@@ -59,7 +59,7 @@ document.getElementById('creditos').addEventListener("click", function(){
 			'</div>'+
 			'<div class="flex flex-row justify-start items-center content-center mb-2">' +
 				'<div class="mr-4">' +
-					'<img src="/assets/img/ro.jpg" alt="Ro" style="max-width: 70px; border-radius: 70px">' +
+					'<img src="/assets/img/ro.jpg" alt="Ro" style="max-width: 50px; border-radius: 50px">' +
 				'</div>' +
 				'<div>' +
 					'<a href="https://twitter.com/rogeliobazh" target="_blank" style="font-style: italic;">@rogeliobazh</a>' +
