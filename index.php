@@ -16,7 +16,7 @@
 <body>
 	<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fb_LT/sdk.js#xfbml=1&version=v9.0" nonce="9j6NBBBm"></script>
-	<header class="bg-white shadow-md mb-10">
+	<header class="bg-white shadow-md mb-10" style="margin-bottom: 20px">
 		<div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center py-4" style="max-width: 1024px">
 			<div>
 				<a href="/">
@@ -28,7 +28,7 @@
 			</div>
 		</div>
 	</header>
-	<div class="flex flex-row justify-center mb-4 items-center">
+	<div class="flex flex-row justify-center mb-4 items-center" >
 		<div class="fb-share-button mx-2" data-href="http://roscavirtual.com" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Froscavirtual.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"></a></div>
 		<div class="mx-2 mt-1">
 			<a href="https://twitter.com/share?ref_src=twsrc%5Etfw&via=roscavirtual&text=Visita nuestra Rosca Virtual&related=roscavirtual" class="twitter-share-button" data-show-count="false"></a>
