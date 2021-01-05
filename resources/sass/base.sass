@@ -1,4 +1,4 @@
-/* purgecss start ignore */
+/*! purgecss start ignore */
 body
 	font-family: 'Montserrat', sans-serif;
 	@apply bg-gray-50
@@ -27,6 +27,8 @@ p, li, div, label, *
 
 input[type=radio]:checked + label
 	@apply border-orange-custom
+	.text-helper
+		@apply bg-orange-custom text-white
 
 input[type=radio]:checked + label.label-button
 	@apply border-orange-custom bg-orange-custom text-white font-semibold
@@ -67,4 +69,4 @@ label.size-label
 .fb-share-button
 	> span
 		height: 24px !important
-/* purgecss end ignore */
+/*! purgecss end ignore */

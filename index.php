@@ -11,7 +11,7 @@
 	  gtag('config', 'G-7HHKHMRRF1');
 	</script>
 	<title>Rosca Virtual</title>
-	<link rel="icon" type="image/png" href="assets/img/Favicon.png">
+	<link rel="icon" type="image/png" href="/assets/img/Favicon.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta property="og:url"           content="https://roscavirtual.com/" />
 	<meta property="og:type"          content="website" />
@@ -32,12 +32,12 @@
 					<img src="/assets/img/Full_Logo.png" alt="" class="max-w-xs mx-auto block mb-4 md:mb-0">
 				</a>
 			</div>
-			<div class="text-base font-normal cursor-pointer leading-relaxed text-orange-custom" style="display: none;">
+			<div class="text-base font-normal cursor-pointer leading-relaxed text-orange-custom" id="creditos">
 				Créditos
 			</div>
 		</div>
 	</header>
-	<div class="flex flex-row justify-center mb-4 items-center" >
+	<div class="flex flex-row justify-center mb-4 items-top" >
 		<div class="fb-share-button mx-2" style="height: 20px !important" data-href="http://roscavirtual.com" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Froscavirtual.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"></a></div>
 		<div class="mx-2">
 			<a href="https://twitter.com/share?ref_src=twsrc%5Etfw&via=roscavirtual&text=Visita nuestra Rosca Virtual&related=roscavirtual" class="twitter-share-button" data-show-count="false"></a>
@@ -47,5 +47,5 @@
 	<div id='app'>
 	</div>
 </body>
-<script type="text/javascript" src="assets/js/app.js?789"></script>
+<script type="text/javascript" src="/assets/js/app.js?789"></script>
 </html>

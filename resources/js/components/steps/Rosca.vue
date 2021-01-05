@@ -40,9 +40,11 @@
 			if(this.isMobile()){
 				this.$router.push('/')
 			}
-
+			if(this.size == ''){
+				this.$router.push('/')
+			}
 			if (! this.$cookies.get('babies')){
-				this.$router.push('/size');
+				this.$router.push('/');
 			}
 		}
 	}

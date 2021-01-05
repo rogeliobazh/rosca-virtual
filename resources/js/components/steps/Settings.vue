@@ -3,12 +3,12 @@
 		<div class="py-8 px-9">
 			<p class="text-xl font-bold leading-relaxed mb-1">¿Con cuántas personas compartirás tu rosca?</p>
 			<p class="text-sm font-normal"> <sup>*</sup> Grande y Extragrande estarán disponibles en las próximas horas.</p>
-			<div class="mx-auto flex flex-col md:flex-row justify-center my-4 mb-6">
+			<div class="mx-auto flex flex-col md:flex-row justify-center items-center content-center  my-4 mb-6">
 				<div class="mb-6 md:mb-0">
 					<input type="radio" id="sm" value="10" v-model="size" class="hide-radio">
 					<label for="sm" class="size-label border-2 shadow-md border-gray-200 text-gray-400 relative rounded-lg">
 						<img src="/assets/img/Chica.png"  class="absolute" alt="Chica">
-						<div class="absolute bg-orange-custom text-white top-0 right-0 rounded-bl-lg rounded-tr-lg px-2 font-bold text-sm text-center">Chica</div>
+						<div class="absolute text-helper bg-white text-orange-custom top-0 right-0 rounded-bl-lg rounded-tr-lg px-2 font-bold text-sm text-center">Chica</div>
 						<div class="absolute bottom-0 right-1 font-bold text-white text-lg">10pz</div>
 					</label>
 				</div>
@@ -16,7 +16,7 @@
 					<input type="radio" id="md" value="20" v-model="size" class="hide-radio">
 					<label for="md" class="size-label border-2 shadow-md border-gray-200 text-gray-400 relative rounded-lg">
 						<img src="/assets/img/Mediana.png"  class="absolute" alt="Mediana">
-						<div class="absolute bg-orange-custom text-white top-0 right-0 rounded-bl-lg rounded-tr-lg px-2 font-bold text-sm text-center">Mediana</div>
+						<div class="absolute text-helper bg-white text-orange-custom top-0 right-0 rounded-bl-lg rounded-tr-lg px-2 font-bold text-sm text-center">Mediana</div>
 						<div class="absolute bottom-0 right-1 font-bold text-white text-lg">20pz</div>
 					</label>
 				</div>
@@ -29,14 +29,14 @@
 							<input type="radio" id="bebe" name="babyType" value="bebe" v-model="babyType" class="hide-radio">
 							<label for="bebe" class="block border border-gray-200 text-gray-400 size-md relative mx-4 cursor-pointer mb-2" style="width: 300px; height: 200px;">
 								<img src="/assets/img/HappyBebe.png" style="max-height: 200px" alt="Bebé">
-								<div class="absolute bg-orange-custom text-white top-0 right-0 rounded-bl-lg  px-2 font-bold text-sm text-center">Bebé Jesús</div>
+								<div class="absolute text-helper bg-white text-orange-custom top-0 right-0 rounded-bl-lg  px-2 font-bold text-sm text-center">Bebé Jesús</div>
 							</label>
 						</div>
 						<div>
 							<input type="radio" id="grogu" name="babyType" value="grogu" v-model="babyType" class="hide-radio">
 							<label for="grogu" class="block border border-gray-200 text-gray-400 size-md relative mx-4 cursor-pointer mb-2" style="width: 300px; height: 200px;">
 								<img src="/assets/img/HappyGrogu.png" style="max-height: 200px" alt="Grogu">
-								<div class="absolute bg-orange-custom text-white top-0 right-0 rounded-bl-lg  px-2 font-bold text-sm text-center">Bebé Yoda</div>
+								<div class="absolute text-helper bg-white text-orange-custom top-0 right-0 rounded-bl-lg  px-2 font-bold text-sm text-center">Bebé Yoda</div>
 							</label>
 						</div>
 					</div>
@@ -65,7 +65,7 @@
 			</transition>
 			<transition name="fade">
 				<div v-show="babies > 0">
-					<input type="checkbox" v-model="edit" id="edit" >
+					<input type="checkbox" v-model="edit" id="edit" style="height: 1rem; width: 1rem;" >
 					<label for="edit" class="text-xl font-bold leading-relaxed mb-1">Personalizar premios y castigos</label>
 					<p class="text-base font-normal leading-relaxed mb-6" style="max-width: 800px">Por el momento solo cuentas con el castigo y premio "Te toca traer tamales", pero puedes cambiarlo por el premio y castigo que deees.</p>
 					<transition name="fade">
@@ -75,9 +75,10 @@
 									<input type="text" v-model="babie.text" class="border border-gray-600 px-2 py-1 text-left bg-white text-sm text-gray-700 w-full max-w-md rounded mr-4" :name="'babie['+index+'][text]'">
 									<div class="mt-6 md:mt-0">
 										<input type="radio" :name="'babie['+index+'][type]'" v-model="babie.type" value="castigo" :id="'castigo-'+index" class="hide-radio">
-										<label :for="'castigo-'+index" class="text-sm text-gray-700 border border-gray-200 label-button rounded p-1">Castigo</label>
+										<label :for="'castigo-'+index" class="text-sm text-gray-700 border border-gray-200 label-button rounded p-1"
+										@click="setCastigoDefault(babie)">Castigo</label>
 										<input type="radio" :name="'babie['+index+'][type]'" v-model="babie.type" value="premio" :id="'premio-'+index" class="hide-radio">
-										<label :for="'premio-'+index" class="text-sm text-gray-700 border border-gray-200 label-button rounded p-1">Premio</label>
+										<label :for="'premio-'+index" @click="setPremioDefault(babie)" class="text-sm text-gray-700 border border-gray-200 label-button rounded p-1">Premio</label>
 									</div>
 
 								</div>
@@ -88,9 +89,9 @@
 				</div>
 			</transition>
 			<div class="flex flex-row justify-between pb-4 mt-8">
-				<button class="py-3 px-4 bg-orange-custom text-white rounded-lg" @click="navigatePrev" type="button"> Regresa</button>
+				<button class="py-3 px-4 bg-white text-orange-custom font-semibold rounded-lg border border-orange-custom" @click="navigatePrev" type="button"> ¿Cómo jugar?</button>
 				<transition name="fade">
-	        		<button v-show="babies > 0" class="py-3 px-4 bg-orange-custom text-white rounded-lg" @click="navigateNext" type="button">Estamos Listos!</button>
+	        		<button v-show="babies > 0" class="py-3 px-4 bg-orange-custom font-semibold text-white rounded-lg" @click="navigateNext" type="button">Estamos Listos!</button>
 	        	</transition>
 			</div>
 		</div>
@@ -233,6 +234,12 @@
 			navigateNext: function(){
 				this.storeCookie()
 				this.$router.push('/rosca/')
+			},
+			setPremioDefault: function(babie) {
+				babie.text = 'Te ganaste un premio!'
+			},
+			setCastigoDefault: function(babie) {
+				babie.text =  'Te toca traer tamales!'
 			}
 		},
 	}

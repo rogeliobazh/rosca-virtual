@@ -10,8 +10,8 @@ export default {
 	},
 	mounted(){
 		Swal.fire({
-		  title: 'Cocinando!',
-		  html: '<p class="text-center text-base leading-6 mb-2">Ve preparando tu cafecito</p> <p class="text-center text-base leading-6 mb-2">No olvides compartir tu pantalla!</p>',
+		  title: '¡Cocinando!',
+		  html: '<p class="text-center text-base leading-6 mb-2">Ve preparando tu cafecito.</p> <p class="text-center text-base leading-6 mb-2">¡No olvides compartir tu pantalla!</p>',
 		  timer: 4000,
 		  timerProgressBar: true,
 		  allowOutsideClick: () => false,
