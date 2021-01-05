@@ -30,7 +30,7 @@
 	</header>
 	<div class="flex flex-row justify-center mb-4 items-center" >
 		<div class="fb-share-button mx-2" style="height: 20px !important" data-href="http://roscavirtual.com" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Froscavirtual.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"></a></div>
-		<div class="mx-2 mt-2">
+		<div class="mx-2">
 			<a href="https://twitter.com/share?ref_src=twsrc%5Etfw&via=roscavirtual&text=Visita nuestra Rosca Virtual&related=roscavirtual" class="twitter-share-button" data-show-count="false"></a>
 		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</div>
