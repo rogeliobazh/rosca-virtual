@@ -9,7 +9,7 @@
 					<label for="sm" class="size-label border-2 shadow-md border-gray-200 text-gray-400 relative rounded-lg">
 						<img src="/assets/img/Chica.png"  class="absolute" alt="Chica">
 						<div class="absolute bg-orange-custom text-white top-0 right-0 rounded-bl-lg rounded-tr-lg px-2 font-bold text-sm text-center">Chica</div>
-						<div class="absolute bottom-0 right-1 font-bold text-white text-lg">10px</div>
+						<div class="absolute bottom-0 right-1 font-bold text-white text-lg">10pz</div>
 					</label>
 				</div>
 				<div class="mb-6 md:mb-0">
@@ -17,7 +17,7 @@
 					<label for="md" class="size-label border-2 shadow-md border-gray-200 text-gray-400 relative rounded-lg">
 						<img src="/assets/img/Mediana.png"  class="absolute" alt="Mediana">
 						<div class="absolute bg-orange-custom text-white top-0 right-0 rounded-bl-lg rounded-tr-lg px-2 font-bold text-sm text-center">Mediana</div>
-						<div class="absolute bottom-0 right-1 font-bold text-white text-lg">20px</div>
+						<div class="absolute bottom-0 right-1 font-bold text-white text-lg">20pz</div>
 					</label>
 				</div>
 			</div>

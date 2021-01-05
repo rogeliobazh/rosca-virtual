@@ -21601,7 +21601,7 @@ var staticRenderFns = [
             staticClass:
               "absolute bottom-0 right-1 font-bold text-white text-lg"
           },
-          [_vm._v("10px")]
+          [_vm._v("10pz")]
         )
       ]
     )
@@ -21638,7 +21638,7 @@ var staticRenderFns = [
             staticClass:
               "absolute bottom-0 right-1 font-bold text-white text-lg"
           },
-          [_vm._v("20px")]
+          [_vm._v("20pz")]
         )
       ]
     )
