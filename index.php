@@ -11,6 +11,7 @@
 	  gtag('config', 'G-7HHKHMRRF1');
 	</script>
 	<title>Rosca Virtual</title>
+	<meta name="description" CONTENT="Con Rosca Virtual comparte con tu familia y amigos la tradición de la Rosca de Reyes  ¡Sin salir de casa!">
 	<link rel="icon" type="image/png" href="/assets/img/Favicon.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta property="og:url"           content="https://roscavirtual.com/" />
