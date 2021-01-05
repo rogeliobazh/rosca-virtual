@@ -6,7 +6,7 @@
 					<div v-if="!isMobile()">
 						<h1 class="text-3xl mb-4 font-bold" >¡Bienvenidos!</h1>
 						<p class="text-2xl font-normal leading-relaxed mb-8">Con <b>Rosca Virtual</b> comparte con tu familia y amigos la tradición de la Rosca de Reyes  ¡Sin salir de casa!</p>
-						<button class="py-3 px-4 bg-orange-custom text-white rounded-lg mb-4 md:mb-0" @click="navigateNext()">¡Próximamente!</button>
+						<button class="py-3 px-4 bg-orange-custom text-white rounded-lg mb-4 md:mb-0" @click="navigateNext()">¡Crear Rosca Virtual!</button>
 					</div>
 
 					<div v-if="isMobile()">
@@ -83,6 +83,9 @@
 						<p class="text-base font-normal leading-relaxed">Ahora sí ¡a disfrutar la Rosca Virtual con tus seres queridos! <b>No olvides compartir tu pantalla</b> para que todos disfruten el momento.</p>
 					</div>
 					<div></div>
+				</div>
+				<div class="text-center py-4">
+					<button class="py-3 px-4 bg-orange-custom text-white rounded-lg mb-4 md:mb-0" @click="navigateNext()">¡Crear Rosca Virtual!</button>
 				</div>
 			</div>
 		</div>
