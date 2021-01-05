@@ -17,13 +17,13 @@
 	<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fb_LT/sdk.js#xfbml=1&version=v9.0" nonce="9j6NBBBm"></script>
 	<header class="bg-white shadow-md mb-10">
-		<div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center py-4">
+		<div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center py-4" style="max-width: 1024px">
 			<div>
 				<a href="/">
 					<img src="/assets/img/Full_Logo.png" alt="" style="max-height: 80px" class="max-w-xs mx-auto block mb-4 md:mb-0">
 				</a>
 			</div>
-			<div class="text-base font-normal cursor-pointer leading-relaxed text-orange-custom hidden">
+			<div class="text-base font-normal cursor-pointer leading-relaxed text-orange-custom" style="display: none;">
 				Créditos
 			</div>
 		</div>
