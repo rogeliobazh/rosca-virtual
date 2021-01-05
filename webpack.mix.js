@@ -35,6 +35,8 @@ if (mix.inProduction()) {
     mix.purgeCss({
         globs: [
             path.join(__dirname, '*.html'),
+            path.join(__dirname, 'resources/js/components/*.vue'),
+            path.join(__dirname, '*.php'),
         ],
     });
 }
