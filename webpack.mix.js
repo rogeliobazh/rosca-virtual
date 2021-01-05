@@ -17,6 +17,9 @@ require('laravel-mix-purgecss');
 mix.js('resources/js/app.js', 'assets/js')
     .sass('resources/sass/app.sass', 'assets/css')
     .options({
+        cssNano: {
+            discardComments: false
+        },
         processCssUrls: false,
         postCss: [
             tailwindcss('./tailwind.config.js'),
@@ -34,7 +37,6 @@ mix.js('resources/js/app.js', 'assets/js')
 if (mix.inProduction()) {
     mix.purgeCss({
         globs: [
-            path.join(__dirname, '*.html'),
             path.join(__dirname, 'resources/js/components/*.vue'),
             path.join(__dirname, '*.php'),
         ],

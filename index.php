@@ -11,7 +11,7 @@
 	<meta property="og:image"         content="https://roscavirtual.com/assets/img/Full_Logo.png" />
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="/assets/css/app.css?123">
+	<link rel="stylesheet" href="/assets/css/app.css?423">
 </head>
 <body>
 	<div id="fb-root"></div>
@@ -29,8 +29,8 @@
 		</div>
 	</header>
 	<div class="flex flex-row justify-center mb-4 items-center" >
-		<div class="fb-share-button mx-2"  data-href="http://roscavirtual.com" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Froscavirtual.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"></a></div>
-		<div class="mx-2 mt-1">
+		<div class="fb-share-button mx-2" style="height: 20px !important" data-href="http://roscavirtual.com" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Froscavirtual.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"></a></div>
+		<div class="mx-2 mt-2">
 			<a href="https://twitter.com/share?ref_src=twsrc%5Etfw&via=roscavirtual&text=Visita nuestra Rosca Virtual&related=roscavirtual" class="twitter-share-button" data-show-count="false"></a>
 		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</div>
@@ -38,5 +38,5 @@
 	<div id='app'>
 	</div>
 </body>
-<script type="text/javascript" src="assets/js/app.js?123"></script>
+<script type="text/javascript" src="assets/js/app.js?423"></script>
 </html>
