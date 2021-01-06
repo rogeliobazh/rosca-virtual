@@ -1,3 +1,4 @@
+/*! purgecss start ignore */
 body
 	font-family: 'Montserrat', sans-serif;
 	@apply bg-gray-50
@@ -5,6 +6,9 @@ body
 .rosca-container
 	margin: 0 auto
 	max-width: 1025px
+
+.rosca-mesa
+	@apply mx-auto shadow-lg mt-6 mb-16
 
 div[class^=rp-]
 	text-align: center
@@ -15,13 +19,19 @@ div[class^=rp-]
 	align-items: center
 
 .step-container
-	@apply bg-white shadow-md max-w-5xl mx-auto px-10 py-5
+	@apply bg-white shadow-md max-w-5xl mx-auto
 
-p, li, div, label
-	@apply text-base
+p, li, div, label, *
+	color: #504141
+	@apply antialiased
 
 input[type=radio]:checked + label
-	@apply border-yellow-500
+	@apply border-orange-custom
+	.text-helper
+		@apply bg-orange-custom text-white
+
+input[type=radio]:checked + label.label-button
+	@apply border-orange-custom bg-orange-custom text-white font-semibold
 
 .fade-enter-active, .fade-leave-active
   transition: opacity .5s
@@ -30,8 +40,33 @@ input[type=radio]:checked + label
   opacity: 0
 
 label.size-label
-	width: 100px
-	height: 100px
+	width: 200px
+	height: 98px
+	background-color: #E9BF7D
 	display: block
 	margin: 0 1rem
 	cursor: pointer
+	img.absolute
+		top: -5px
+
+.swal2-styled.swal2-confirm
+	background-color: rgba(245, 158, 11, var(--tw-bg-opacity)) !important
+
+.swal2-loader
+	display: none !important
+
+.swal2-timer-progress-bar
+	background-color: rgba(245, 158, 11, var(--tw-bg-opacity)) !important
+
+.hide-radio
+	position: absolute
+	left: -1500000px
+
+.piece-number
+	color: #543E59
+	text-shadow: 0px 1px 1px rgba(255, 255, 255, 1)
+	@apply relative font-bold
+.fb-share-button
+	> span
+		height: 24px !important
+/*! purgecss end ignore */

@@ -1,71 +1,64 @@
 <template>
-	<div class="rosca-container grande">
-		<div class="grid-container">
-			<div
-				v-for="(piece, index) in pieces"
-				v-on:click="checkBabie(piece, index)"
-				:key="piece"
-				:class="'rp-'+index">
-			</div>
+	<div class="rosca-mesa grande">
+		<div class="rosca-container">
+			<transition name="fade">
+				<div v-show="loadPie == true" >
+					<div v-if="piecesLeft > 0" class="grid-container">
+						<div
+							v-for="(piece, index) in pieces"
+							v-on:click="checkBabie(piece, index)"
+							:data-piece="index+1"
+							:key="piece"
+							:class="'rp-'+index">
+							<div class="piece-number">{{index+1}}</div>
+						</div>
+					</div>
+				</div>
+			</transition>
 		</div>
+		<transition name="fade">
+			<div v-if="piecesLeft == 0" >
+				<thank-you></thank-you>
+			</div>
+		</transition>
 	</div>
 </template>
 <script>
-	import Swal from 'sweetalert2'
+	import ThankYou from './ThankYou.vue'
+	import Roscas from '@/mixins/roscas.js'
 	export default {
+		components: {
+			ThankYou,
+		},
+		mixins: [Roscas],
 		data() {
 			return {
 				pieces: 30,
 				price: 0,
+				piecesLeft: 1,
 				babies: this.$store.state.babies,
 				prieces: [],
 				hiddenPlaces: [],
-			}
-		},
-		mounted(){
-			this.prieces = this.$cookies.get('babies')
-		    for (var i = 0, cPieces = []; i < this.pieces; i++) {
-	    		cPieces[i] = i;
-	  		}
-	  		cPieces.sort(function () {
-		     	return Math.random() - 0.5;
-			});
-			this.hiddenPlaces = cPieces.splice(0,this.babies);
-			console.log(this.hiddenPlaces);
-		},
-		methods: {
-			checkBabie: function(piece, index) {
-				let inPrieces = this.checkValue(index);
-				console.log(inPrieces);
-				if(inPrieces){
-					Swal.fire({
-					  	imageUrl: '../assets/img/grogu.png',
-						imageHeight: 300,
-					  	title: 'Yeeei!',
-					  	text: this.prieces[this.price].text,
-					});
-					this.price++;
-				} else {
-					Swal.fire({
-					  icon: 'info',
-					  title: 'Buuu',
-					  text: 'No hay ninjo :(',
-					});
-				}
-				let el = document.getElementsByClassName('rp-'+index)[0];
-				el.style.display = "none";
-			},
-			checkValue: function(index){
-				let status = false;
-				for(var i=0; i<this.hiddenPlaces.length; i++){
-					let name = this.hiddenPlaces[i];
-				    if(name == index){
-				      status = true;
-				      break;
-				    }
-				  }
-				  return status;
+				loadPie: false,
+				top: ["1","2","3","4", "5", "6", "7", "8", "9", "10", "11"],
+				right: ["12", "13", "14", "15"],
+				bottom: ["16","17","18","19", "20", "21", "22", "23", "24", "25", "26"],
+				left: ["27", "28", "29", "30"]
 			}
 		},
 	}
 </script>
+<style type="text/css">
+	.rp-top .piece-number {
+		top: -65px;
+	}
+	.rp-left .piece-number {
+		left: -65px;
+	}
+	.rp-bottom .piece-number {
+		bottom: -65px;
+	}
+	.rp-right .piece-number {
+		right: -65px;
+	}
+</style>
