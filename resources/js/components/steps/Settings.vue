@@ -2,7 +2,6 @@
 	<div class="step-container">
 		<div class="py-8 px-9">
 			<p class="text-xl font-bold leading-relaxed mb-1">¿Con cuántas personas compartirás tu rosca?</p>
-			<p class="text-sm font-normal"> <sup>*</sup> Grande y Extragrande estarán disponibles en las próximas horas.</p>
 			<div class="mx-auto flex flex-col md:flex-row justify-center items-center content-center  my-4 mb-6">
 				<div class="mb-6 md:mb-0">
 					<input type="radio" id="sm" value="10" v-model="size" class="hide-radio">
