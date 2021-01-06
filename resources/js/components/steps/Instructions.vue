@@ -5,7 +5,7 @@
 				<div class="max-w-xl">
 					<div v-if="!isMobile()">
 						<h1 class="text-3xl mb-4 font-bold" >¡Bienvenidos!</h1>
-						<p class="text-2xl font-normal leading-relaxed mb-8">Con <b>Rosca Virtual</b> comparte con tu familia y amigos la tradición de la Rosca de Reyes  ¡Sin salir de casa!</p>
+						<p class="text-2xl font-normal leading-relaxed mb-8">Con <b>Rosca Virtual</b> comparte con tu familia y amigos la tradición de la Rosca de Reyes ¡Sin salir de casa!</p>
 						<button class="py-3 px-4 bg-orange-custom text-white font-semibold rounded-lg mb-4 md:mb-0" @click="navigateNext()">¡Crear Rosca Virtual!</button>
 					</div>
 
@@ -27,7 +27,7 @@
 				<h3 class="text-2xl font-bold leading-relaxed text-orange-custom mb-4">¿Cómo empezar?</h3>
 				<div class="flex flex-col md:flex-row justify-between">
 					<div class="max-w-xl">
-						<p class="text-base font-normal leading-relaxed">Para utilizar Rosca Virtual es indispensable poder compartir tu pantalla con tus amigos.  <br>¡Puedes usar una de estas herramientas!</p>
+						<p class="text-base font-normal leading-relaxed">Para utilizar Rosca Virtual es indispensable poder compartir tu pantalla con tus amigos. <br>¡Puedes usar una de estas herramientas!</p>
 						<p class="text-base font-normal leading-relaxed mt-2 md:mt-6"><b>Pro Tip:</b> ¡No compartas tu pantalla hasta qué tengas lista tu rosca!</p>
 					</div>
 					<div class="flex flex-row justify-center md:justify-between items-center my-4 md:my-0">
@@ -82,7 +82,7 @@
 				<h3 class="text-2xl font-bold leading-relaxed text-orange-custom mb-4">Paso 2: Selecciona a tu bebé</h3>
 				<div class="flex flex-col md:flex-row">
 					<div class="max-w-xl">
-						<p class="text-base font-normal leading-relaxed mb-4">Si ya estamos innovando con la Rosca Virtual  ¿Por qué no seleccionar otro bebé?  </p>
+						<p class="text-base font-normal leading-relaxed mb-4">Si ya estamos innovando con la Rosca Virtual ¿Por qué no seleccionar otro bebé?</p>
 						<p class="text-base font-normal leading-relaxed"> Puedes escoger entre usar al bebé tradicional o una figurita del bebé más famoso del momento.</p>
 					</div>
 					<div>
@@ -105,8 +105,8 @@
 				<h3 class="text-2xl font-bold leading-relaxed text-orange-custom mb-4">Paso 3: ¿Cuántos bebés habrá en tu rosca?</h3>
 				<div class="flex flex-row">
 					<div class="max-w-xl">
-						<p class="text-base font-normal leading-relaxed mb-4">Selecciona cuántos bebés quieres que haya escondidos en tu rosca.  </p>
-						<p class="text-base font-normal leading-relaxed">¿Quieres una rosca llena de bebés?  ¡Tus deseos son órdenes!</p>
+						<p class="text-base font-normal leading-relaxed mb-4">Selecciona cuántos bebés quieres que haya escondidos en tu rosca.</p>
+						<p class="text-base font-normal leading-relaxed">¿Quieres una rosca llena de bebés? ¡Tus deseos son órdenes!</p>
 					</div>
 					<div></div>
 				</div>
@@ -115,7 +115,7 @@
 				<h3 class="text-2xl font-bold leading-relaxed text-orange-custom mb-4">Paso 4: Personaliza los castigos o cambialos a premios!</h3>
 				<div class="flex flex-row">
 					<div class="max-w-xl">
-						<p class="text-base font-normal leading-relaxed mb-4">Por default los castigos de los bebés son los clasicos tamales, pero para hacerlo más divertido.... ¡Puedes personalizarlos!  </p>
+						<p class="text-base font-normal leading-relaxed mb-4">Por default los castigos de los bebés son los clasicos tamales, pero para hacerlo más divertido.... ¡Puedes personalizarlos!</p>
 						<p class="text-base font-normal leading-relaxed">Crea castigos únicos o ¿por qué no? que los bebés sean premios. <br> ¡Tú decides!</p>
 						<p class="text-base font-normal leading-relaxed mt-2 md:mt-6"><b>Pro Tip:</b> Combina castigos con premios para hacer el juego más entretenido</p>
 					</div>
