@@ -5,7 +5,7 @@
 			<div class="mx-auto flex flex-col md:flex-row justify-center items-center content-center  my-4 mb-6">
 				<div class="mb-6 md:mb-0">
 					<input type="radio" id="sm" value="10" v-model="size" class="hide-radio">
-					<label for="sm" class="size-label border-2 shadow-md border-gray-200 text-gray-400 relative rounded-lg">
+					<label for="sm" class="size-label border-2 shadow-md border-gray-200 text-gray-400 relative rounded-lg" @click="resetValues">
 						<img src="/assets/img/Chica.png"  class="absolute" alt="Chica">
 						<div class="absolute text-helper bg-white text-orange-custom top-0 right-0 rounded-bl-lg rounded-tr-lg px-2 font-bold text-sm text-center">Chica</div>
 						<div class="absolute bottom-0 right-1 font-bold text-white text-lg">10pz</div>
@@ -13,7 +13,7 @@
 				</div>
 				<div class="mb-6 md:mb-0">
 					<input type="radio" id="md" value="20" v-model="size" class="hide-radio">
-					<label for="md" class="size-label border-2 shadow-md border-gray-200 text-gray-400 relative rounded-lg">
+					<label for="md" class="size-label border-2 shadow-md border-gray-200 text-gray-400 relative rounded-lg" @click="resetValues">
 						<img src="/assets/img/Mediana.png"  class="absolute" alt="Mediana">
 						<div class="absolute text-helper bg-white text-orange-custom top-0 right-0 rounded-bl-lg rounded-tr-lg px-2 font-bold text-sm text-center">Mediana</div>
 						<div class="absolute bottom-0 right-1 font-bold text-white text-lg">20pz</div>
@@ -21,7 +21,7 @@
 				</div>
 				<div class="mb-6 md:mb-0">
 					<input type="radio" id="lg" value="30" v-model="size" class="hide-radio">
-					<label for="lg" class="size-label border-2 shadow-md border-gray-200 text-gray-400 relative rounded-lg">
+					<label for="lg" class="size-label border-2 shadow-md border-gray-200 text-gray-400 relative rounded-lg" @click="resetValues">
 						<img src="/assets/img/Grande.png"  class="absolute" alt="Grande">
 						<div class="absolute text-helper bg-white text-orange-custom top-0 right-0 rounded-bl-lg rounded-tr-lg px-2 font-bold text-sm text-center">Grande</div>
 						<div class="absolute bottom-0 right-1 font-bold text-white text-lg">30pz</div>
@@ -29,7 +29,7 @@
 				</div>
 				<div class="mb-6 md:mb-0">
 					<input type="radio" id="xl" value="50" v-model="size" class="hide-radio">
-					<label for="xl" class="size-label border-2 shadow-md border-gray-200 text-gray-400 relative rounded-lg">
+					<label for="xl" class="size-label border-2 shadow-md border-gray-200 text-gray-400 relative rounded-lg" @click="resetValues">
 						<img src="/assets/img/Extragrande.png"  class="absolute" alt="Extra Grande">
 						<div class="absolute text-helper bg-white text-orange-custom top-0 right-0 rounded-bl-lg rounded-tr-lg px-2 font-bold text-sm text-center">Extra Grande</div>
 						<div class="absolute bottom-0 right-1 font-bold text-white text-lg">50pz</div>
@@ -71,8 +71,11 @@
 						  </button>
 						</div>
 						<div>
-							<p class="text-center text-sm leading-6">
+							<p v-if="this.size != 50" class="text-center text-sm leading-6">
 								* Tienes <span class="text-orange-custom text-base leading-6 font-bold">{{this.size - this.babies}}</span> bebés disponibles
+							</p>
+							<p v-else class="text-center text-sm leading-6">
+								* Tienes <span class="text-orange-custom text-base leading-6 font-bold">{{ 35 - this.babies}}</span> bebés disponibles
 							</p>
 						</div>
 					</div>
@@ -113,6 +116,7 @@
 	</div>
 </template>
 <script>
+	import Swal from 'sweetalert2'
 	import Mobile from '@/mixins/mobile.js'
 	export default {
 		mixins: [Mobile],
@@ -206,7 +210,7 @@
 				this.edit = false
 			},
 			increment: function(e) {
-			    if (this.babies < this.size){
+			    if (this.babies < this.size && this.babies < 35){
 			    	this.babies++
 			    	this.addNewCustomBabie()
 			    }
@@ -240,6 +244,9 @@
 					}
 				}
 
+				if(this.$cookies.isKey('babies') ){
+					this.$cookies.remove('babies')
+				}
 				this.$cookies.set('babies', JSON.stringify(cleanArray), 0)
 			},
 			navigatePrev: function() {
@@ -248,7 +255,22 @@
 			},
 			navigateNext: function(){
 				this.storeCookie()
-				this.$router.push('/rosca/')
+				Swal.fire({
+				  title: '¡Cocinando!',
+				  html: '<p class="text-center text-base leading-6 mb-2">Ve preparando tu cafecito.</p> <p class="text-center text-base leading-6 mb-2">¡No olvides compartir tu pantalla!</p>',
+				  timer: 10000,
+				  timerProgressBar: true,
+				  allowOutsideClick: () => false,
+				  didOpen: () => {
+				    Swal.showLoading()
+				  },
+				  willClose: () => {
+				    clearInterval()
+				  }
+				})
+				setTimeout(function(){
+					this.$router.push('/rosca/')
+				}.bind(this), 4000)
 			},
 			setPremioDefault: function(babie) {
 				babie.text = 'Te ganaste un premio!'

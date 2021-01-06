@@ -14,19 +14,6 @@ export default {
 		},
 	},
 	mounted(){
-		Swal.fire({
-		  title: '¡Cocinando!',
-		  html: '<p class="text-center text-base leading-6 mb-2">Ve preparando tu cafecito.</p> <p class="text-center text-base leading-6 mb-2">¡No olvides compartir tu pantalla!</p>',
-		  timer: 4000,
-		  timerProgressBar: true,
-		  allowOutsideClick: () => false,
-		  didOpen: () => {
-		    Swal.showLoading()
-		  },
-		  willClose: () => {
-		    clearInterval()
-		  }
-		})
 		let pieceNumber = document.querySelectorAll("[class^=rp]")
 		for (var i=0; i < pieceNumber.length; i++)
 		{
@@ -46,16 +33,17 @@ export default {
 		this.piecesLeft = this.pieces
 
 		this.prieces = JSON.parse(this.$cookies.get('babies'))
+
 	    for (var i = 0, cPieces = []; i < this.pieces; i++) {
     		cPieces[i] = i;
   		}
+
 
   		cPieces.sort(function () {
 	     	return Math.random() - 0.5;
 		});
 
 		this.hiddenPlaces = cPieces.splice(0,this.babies);
-		console.log(this.hiddenPlaces);
 
 		setTimeout(function(){
 			this.loadPie = true
