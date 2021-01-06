@@ -20,6 +20,22 @@
 						<div class="absolute bottom-0 right-1 font-bold text-white text-lg">20pz</div>
 					</label>
 				</div>
+				<div class="mb-6 md:mb-0">
+					<input type="radio" id="lg" value="30" v-model="size" class="hide-radio">
+					<label for="lg" class="size-label border-2 shadow-md border-gray-200 text-gray-400 relative rounded-lg">
+						<img src="/assets/img/Grande.png"  class="absolute" alt="Grande">
+						<div class="absolute text-helper bg-white text-orange-custom top-0 right-0 rounded-bl-lg rounded-tr-lg px-2 font-bold text-sm text-center">Grande</div>
+						<div class="absolute bottom-0 right-1 font-bold text-white text-lg">30pz</div>
+					</label>
+				</div>
+				<div class="mb-6 md:mb-0">
+					<input type="radio" id="xl" value="50" v-model="size" class="hide-radio">
+					<label for="xl" class="size-label border-2 shadow-md border-gray-200 text-gray-400 relative rounded-lg">
+						<img src="/assets/img/Extragrande.png"  class="absolute" alt="Extra Grande">
+						<div class="absolute text-helper bg-white text-orange-custom top-0 right-0 rounded-bl-lg rounded-tr-lg px-2 font-bold text-sm text-center">Extra Grande</div>
+						<div class="absolute bottom-0 right-1 font-bold text-white text-lg">50pz</div>
+					</label>
+				</div>
 			</div>
 			<transition name="fade">
 				<div v-if="size !=''" class="mb-6">

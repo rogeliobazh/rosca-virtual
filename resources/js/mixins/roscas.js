@@ -1,6 +1,11 @@
 import Swal from 'sweetalert2'
 
 export default {
+	data() {
+		return {
+			used: [],
+		}
+	},
 	computed: {
 		babyType: {
 			get() {
@@ -58,6 +63,10 @@ export default {
 	},
 	methods: {
 		checkBabie: function(piece, index) {
+			if(this.used.indexOf(index) != -1){
+				return;
+			}
+			this.used.push(index)
 			this.piecesLeft--
 			let inPrieces = this.checkValue(index);
 			if(inPrieces){
