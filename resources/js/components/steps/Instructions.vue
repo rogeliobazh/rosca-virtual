@@ -1,5 +1,5 @@
 <template>
-	<div class="step-container">
+	<div class="step-container bg-white shadow-md max-w-5xl mx-auto">
 		<div class="header" style="background-color: #F5F3DE;">
 			<div class="flex flex-col md:flex-row justify-between items-center py-14 px-9">
 				<div class="max-w-xl">

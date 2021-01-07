@@ -6,8 +6,22 @@ import {routes} from './routes/index'
 import App from './components/App.vue'
 import store from './store/index'
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 Vue.use(VueCookies)
+
+let router = new VueRouter({
+	mode: 'history',
+	routes,
+	store
+});
+
+var vm = new Vue({
+	el: "#app",
+	router,
+	store,
+	render: h => h(App),
+})
+
 document.getElementById('creditos').addEventListener("click", function(){
 	Swal.fire({
 		title: 'Nos Presentamos',
@@ -71,16 +85,3 @@ document.getElementById('creditos').addEventListener("click", function(){
 	})
 
 })
-
-let router = new VueRouter({
-	mode: 'history',
-	routes,
-	store
-});
-
-var vm = new Vue({
-	el: "#app",
-	router,
-	store,
-	render: h => h(App),
-});

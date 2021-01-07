@@ -1,5 +1,5 @@
 <template>
-	<div class="step-container">
+	<div class="step-container bg-white shadow-md max-w-5xl mx-auto">
 		<div class="py-8 px-9">
 			<p class="text-xl font-bold leading-relaxed mb-1">¿Con cuántas personas compartirás tu rosca?</p>
 			<div class="mx-auto flex flex-col md:flex-row justify-center items-center content-center  my-4 mb-6">
@@ -257,7 +257,8 @@
 				this.storeCookie()
 				Swal.fire({
 				  title: '¡Cocinando!',
-				  html: '<p class="text-center text-base leading-6 mb-2">Ve preparando tu cafecito.</p> <p class="text-center text-base leading-6 mb-2">¡No olvides compartir tu pantalla!</p>',
+				  html: '<p class="text-center text-base leading-6 mb-2">Ve preparando tu cafecito.</p>'+
+				  		'<p class="text-center text-base leading-6 mb-2">¡No olvides compartir tu pantalla!</p>',
 				  timer: 10000,
 				  timerProgressBar: true,
 				  allowOutsideClick: () => false,

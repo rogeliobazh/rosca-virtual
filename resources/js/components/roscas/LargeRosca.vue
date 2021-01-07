@@ -1,5 +1,5 @@
 <template>
-	<div class="rosca-mesa grande">
+	<div class="rosca-mesa grande mx-auto shadow-lg mt-6 mb-16">
 		<div class="rosca-container">
 			<transition name="fade">
 				<div v-show="loadPie == true" >

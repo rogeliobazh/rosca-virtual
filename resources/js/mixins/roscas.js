@@ -14,42 +14,43 @@ export default {
 		},
 	},
 	mounted(){
-		let pieceNumber = document.querySelectorAll("[class^=rp]")
-		for (var i=0; i < pieceNumber.length; i++)
-		{
-			let currentPiece = pieceNumber[i].getAttribute("data-piece")
-
-			if (this.top.indexOf(currentPiece) != -1 ) {
-				pieceNumber[i].classList.add("rp-top");
-			} else if (this.left.indexOf(currentPiece) != -1) {
-				pieceNumber[i].classList.add("rp-left");
-			} else if (this.bottom.indexOf(currentPiece) != -1) {
-				pieceNumber[i].classList.add("rp-bottom");
-			} else if (this.right.indexOf(currentPiece) != -1) {
-				pieceNumber[i].classList.add("rp-right");
-			}
-		}
-
-		this.piecesLeft = this.pieces
-
-		this.prieces = JSON.parse(this.$cookies.get('babies'))
-
-	    for (var i = 0, cPieces = []; i < this.pieces; i++) {
-    		cPieces[i] = i;
-  		}
-
-
-  		cPieces.sort(function () {
-	     	return Math.random() - 0.5;
-		});
-
-		this.hiddenPlaces = cPieces.splice(0,this.babies);
-
+		this.setPiecesPosition()
+		this.hideBabies()
 		setTimeout(function(){
 			this.loadPie = true
 		}.bind(this), 3000)
 	},
 	methods: {
+		setPiecesPosition: function() {
+			let pieceNumber = document.querySelectorAll("[class^=rp]")
+
+			for (var i=0; i < pieceNumber.length; i++)
+			{
+				let currentPiece = pieceNumber[i].getAttribute("data-piece")
+
+				if (this.top.indexOf(currentPiece) != -1 ) {
+					pieceNumber[i].classList.add("rp-top");
+				} else if (this.left.indexOf(currentPiece) != -1) {
+					pieceNumber[i].classList.add("rp-left");
+				} else if (this.bottom.indexOf(currentPiece) != -1) {
+					pieceNumber[i].classList.add("rp-bottom");
+				} else if (this.right.indexOf(currentPiece) != -1) {
+					pieceNumber[i].classList.add("rp-right");
+				}
+			}
+		},
+		hideBabies: function() {
+			this.piecesLeft = this.pieces
+			this.prieces = JSON.parse(this.$cookies.get('babies'))
+		    for (var i = 0, trancientPieces = []; i < this.pieces; i++) {
+	    		trancientPieces[i] = i;
+	  		}
+	  		trancientPieces.sort(function () {
+		     	return Math.random() - 0.5;
+			});
+
+			this.hiddenPlaces = trancientPieces.splice(0,this.babies);
+		},
 		checkBabie: function(piece, index) {
 			if(this.used.indexOf(index) != -1){
 				return;
