@@ -11,12 +11,12 @@
   },
   "devDependencies": {
     "cross-env": "^5.1",
-    "laravel-mix": "^2.0",
+    "laravel-mix": "^6.0",
     "laravel-mix-purgecss": "^2.2.3"
   },
   "dependencies": {
     "autoprefixer": "^10.1.0",
-    "npm": "^6.4.1",
+    "npm": "^6.14.18",
     "postcss": "^8.2.2",
     "sweetalert2": "^10.12.6",
     "tailwindcss": "^2.0.2",
